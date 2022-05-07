@@ -1,0 +1,28 @@
+{% extends 'admin_home.html' %}
+{% load static %}
+{% block content %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">name</th>
+      <th scope="col">place</th>
+      <th scope="col">contact</th>
+      <th scope="col">email</th>
+      <th scope="col">update</th>
+      <th scope="col">delete</th>
+    </tr>
+  </thead>
+  {% for i in h %}
+    <tr>
+      <th scope="row">{{i.name}}</th>
+      <td>{{i.place}}</td>
+      <td>{{i.contact}}</td>
+      <td>{{i.email}} </td>
+      <td><a href="{% url 'hospital_update' i.id %}">update</a> </td>
+      <td><a href="{% url 'hospital_delete' i.id %}">delete</a> </td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

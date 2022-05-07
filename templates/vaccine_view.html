@@ -1,0 +1,26 @@
+{% extends 'admin_home.html' %}
+{% load static %}
+{% block content %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">SL.No</th>
+      <th scope="col">vaccine name</th>
+      <th scope="col">description</th>
+      <th scope="col">update</th>
+      <th scope="col">delete</th>
+    </tr>
+  </thead>
+  {% for i in data %}
+    <tr>
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.name}}</td>
+      <td>{{i.description}}</td>
+      <td><a href="{% url 'vaccine_update' i.id %}">update</a> </td>
+      <td><a href="{% url 'vaccine_delete' i.id %}">delete</a> </td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
