@@ -34,7 +34,7 @@ class Nurse(models.Model):
     phone_number = models.CharField(max_length=50)
     age = models.IntegerField()
     address = models.TextField()
-    hospital=models.OneToOneField(Hospital,on_delete=models.CASCADE)
+    hospital=models.ForeignKey(Hospital,on_delete=models.CASCADE,null=True)
 
 
 

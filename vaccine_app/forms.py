@@ -22,7 +22,7 @@ class Vaccine_Add(forms.ModelForm):
 class NurseRegistration(forms.ModelForm):
     class Meta:
         model=Nurse
-        fields=('name','email','age','phone_number','address')
+        fields=('name','email','age','phone_number','address','hospital')
 
 class HospitalRegistration(forms.ModelForm):
     class Meta:
